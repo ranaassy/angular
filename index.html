@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>angular project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+    <div class="container pt-5">
+
+        <h2>All Users</h2>
+        <div class="clearfix"></div>
+        <hr>
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>details</th>
+                    <th>show more</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td> {{ $index+1 }}.</td>
+                    <td> {{user.name}} </td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.gender}}</td>
+                    <td> <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModalDetails" ng-click="selectUser(user)">Details</button> </td>
+                    <td> <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#myModalMore" ng-click="selectUser(user)">Show more</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Trigger the modal with a button -->
+
+    <!-- Modal  to show member details-->
+    <div id="myModalDetails" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">all details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-6">
+
+                            <div class="card w-100">
+
+                                <img src="images/images (2).png" class="card-img-top mx-auto w-75" alt="pic">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Descreption</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+
+                            <!-- <div ng-view></div> -->
+                        </div>
+
+                        <form class="form-horizontal col-6">
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Username" ng-model="clickedUser.name">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">age</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email" ng-model="clickedUser.age">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">gender</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Full Name" ng-model="clickedUser.gender">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModalMore" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <!-- <h4 class="modal-title">Are You Sure?</h4> -->
+                </div>
+                <div class="modal-body">
+                    <h3 style="color: red">sorry there is not data for user "{{clickedUser.name}}".</h3>
+                    <br/>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
