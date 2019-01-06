@@ -19,7 +19,6 @@
         <div class="clearfix"></div>
         <hr>
 
-
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -27,8 +26,9 @@
                     <th>name</th>
                     <th>age</th>
                     <th>gender</th>
+                    <th>photo</th>
                     <th>details</th>
-                    <th>show more</th>
+                    <th>show all data</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +37,7 @@
                     <td> {{user.name}} </td>
                     <td>{{user.age}}</td>
                     <td>{{user.gender}}</td>
+                    <td><img ng-src="{{user.photo}}" style="height:70px; width: 70px"> </td>
                     <td> <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModalDetails" ng-click="selectUser(user)">Details</button> </td>
                     <td> <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#myModalMore" ng-click="selectUser(user)">Show more</button> </td>
                 </tr>
@@ -63,7 +64,7 @@
 
                             <div class="card w-100">
 
-                                <img src="images/images (2).png" class="card-img-top mx-auto w-75" alt="pic">
+                                <img src="images/user.png" class="card-img-top mx-auto w-75" alt="pic">
 
                                 <div class="card-body">
                                     <h5 class="card-title">Descreption</h5>
@@ -133,6 +134,7 @@
 
         </div>
     </div>
+
 
 
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
